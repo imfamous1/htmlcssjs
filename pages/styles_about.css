@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.my-element {
+    width: 200px;
+    height: 100px;
+
+    padding: 20px;
+    
+    border: 5px solid #3498db;
+}

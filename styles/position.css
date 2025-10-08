@@ -1,0 +1,185 @@
+/* Общие стили для страницы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding-bottom: 100px;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem;
+    color: #2575fc;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1.2rem 0 0.8rem;
+    color: #444;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.example-container {
+    position: relative;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f8f8f8;
+    min-height: 300px;
+    border-radius: 4px;
+}
+
+.box {
+    width: 120px;
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: white;
+}
+
+.code-block {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    margin: 15px 0;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.note {
+    background-color: #e7f3ff;
+    border-left: 4px solid #2575fc;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Стили для демонстрации позиционирования */
+
+/* STATIC - значение по умолчанию */
+.static-box {
+    background-color: #4CAF50;
+}
+
+/* RELATIVE - позиционирование относительно нормального положения */
+.relative-box {
+    background-color: #2196F3;
+    position: relative;
+    /* Сдвигаем элемент относительно его нормального положения */
+    top: 20px;
+    left: 30px;
+}
+
+/* ABSOLUTE - позиционирование относительно ближайшего позиционированного предка */
+.absolute-box {
+    background-color: #FF9800;
+    position: absolute;
+    /* Позиционируем элемент в правом нижнем углу контейнера */
+    bottom: 20px;
+    right: 20px;
+}
+
+/* FIXED - позиционирование относительно окна браузера */
+.fixed-box {
+    background-color: #9C27B0;
+    position: fixed;
+    /* Фиксируем элемент в правом нижнем углу экрана */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* STICKY - гибрид relative и fixed позиционирования */
+.sticky-box {
+    background-color: #F44336;
+    position: sticky;
+    /* Элемент будет "прилипать" при прокрутке */
+    top: 20px;
+    z-index: 100;
+}
+
+/* Дополнительные элементы для демонстрации */
+.content-block {
+    height: 300px;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.scroll-indicator {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin: 10px 0;
+}
+
+.position-label {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background: white;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: bold;
+}

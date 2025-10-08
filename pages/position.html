@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Позиционирование - Практическое руководство</title>
+    <link rel="stylesheet" href="../styles/position.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Позиционирование: Полное руководство</h1>
+        <p>Практические примеры всех 5 типов позиционирования в CSS</p>
+    </header>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Введение в CSS позиционирование</h2>
+            <p>CSS позиционирование позволяет контролировать расположение элементов на веб-странице. Понимание различных типов позиционирования - ключевой навык для создания сложных макетов.</p>
+            
+            <div class="note">
+                <p><strong>Примечание:</strong> Прокрутите страницу вниз, чтобы увидеть разницу в поведении элементов с разными типами позиционирования.</p>
+            </div>
+        </div>
+        
+        <!-- STATIC POSITIONING -->
+        <div class="section">
+            <h2>1. Static (Статическое) позиционирование</h2>
+            <p>Это значение по умолчанию для всех элементов. Элементы располагаются в нормальном потоке документа.</p>
+            
+            <div class="code-block">
+.element {
+    position: static; /* Это значение по умолчанию */
+    /* Свойства top, right, bottom, left и z-index не применяются */
+}
+            </div>
+            
+            <div class="example-container">
+                <span class="position-label">Контейнер для демонстрации</span>
+                <div class="box static-box">Static</div>
+                <p>Этот элемент имеет позиционирование по умолчанию (static). Он находится в нормальном потоке документа и не реагирует на свойства top, right, bottom, left.</p>
+            </div>
+        </div>
+        
+        <!-- RELATIVE POSITIONING -->
+        <div class="section">
+            <h2>2. Relative (Относительное) позиционирование</h2>
+            <p>Элемент позиционируется относительно своего нормального положения в потоке. Остальное содержимое ведет себя так, как если бы элемент не был сдвинут.</p>
+            
+            <div class="code-block">
+.element {
+    position: relative;
+    top: 20px;   /* Сдвиг вниз на 20px от нормальной позиции */
+    left: 30px;  /* Сдвиг вправо на 30px от нормальной позиции */
+}
+            </div>
+            
+            <div class="example-container">
+                <span class="position-label">Контейнер для демонстрации</span>
+                <div class="box static-box">Static (для сравнения)</div>
+                <div class="box relative-box">Relative</div>
+                <p>Синий элемент имеет relative позиционирование и сдвинут на 20px вниз и 30px вправо относительно своего нормального положения. Обратите внимание, что пространство, которое он занимал изначально, сохраняется.</p>
+            </div>
+        </div>
+        
+        <!-- ABSOLUTE POSITIONING -->
+        <div class="section">
+            <h2>3. Absolute (Абсолютное) позиционирование</h2>
+            <p>Элемент удаляется из нормального потока документа и позиционируется относительно ближайшего позиционированного предка (элемента с position не равным static). Если такого предка нет, элемент позиционируется относительно окна браузера.</p>
+            
+            <div class="code-block">
+.container {
+    position: relative; /* Создаем контекст позиционирования */
+}
+
+.element {
+    position: absolute;
+    bottom: 20px;  /* 20px от нижнего края контейнера */
+    right: 20px;   /* 20px от правого края контейнера */
+}
+            </div>
+            
+            <div class="example-container">
+                <span class="position-label">Контейнер для демонстрации (position: relative)</span>
+                <div class="box absolute-box">Absolute</div>
+                <p>Оранжевый элемент имеет absolute позиционирование и расположен в правом нижнем углу контейнера. Он полностью удален из нормального потока документа.</p>
+            </div>
+        </div>
+        
+        <!-- FIXED POSITIONING -->
+        <div class="section">
+            <h2>4. Fixed (Фиксированное) позиционирование</h2>
+            <p>Элемент удаляется из нормального потока и позиционируется относительно окна браузера. Он остается на одном месте даже при прокрутке страницы.</p>
+            
+            <div class="code-block">
+.element {
+    position: fixed;
+    bottom: 20px;  /* 20px от нижнего края окна браузера */
+    right: 20px;   /* 20px от правого края окна браузера */
+    z-index: 1000; /* Убедитесь, что элемент поверх другого контента */
+}
+            </div>
+            
+            <div class="example-container">
+                <p>Фиолетовый элемент с fixed позиционированием расположен в правом нижнем углу окна браузера. Он остается на месте при прокрутке страницы.</p>
+            </div>
+            
+            <!-- Fixed элемент вне контейнера для демонстрации -->
+            <div class="box fixed-box">Fixed</div>
+        </div>
+        
+        <!-- STICKY POSITIONING -->
+        <div class="section">
+            <h2>5. Sticky (Липкое) позиционирование</h2>
+            <p>Гибрид relative и fixed позиционирования. Элемент ведет себя как relative, пока не достигнет определенной точки прокрутки, после чего "прилипает" и ведет себя как fixed.</p>
+            
+            <div class="code-block">
+.element {
+    position: sticky;
+    top: 20px; /* Элемент "прилипнет", когда достигнет 20px от верха окна */
+}
+            </div>
+            
+            <div class="example-container">
+                <span class="position-label">Контейнер для демонстрации</span>
+                <div class="box sticky-box">Sticky</div>
+                <p>Красный элемент имеет sticky позиционирование. Прокрутите этот раздел, чтобы увидеть, как он "прилипает" к верхней части контейнера.</p>
+                
+                <div class="content-block">Прокрутите вниз, чтобы увидеть sticky эффект →</div>
+                <div class="content-block">Продолжайте прокручивать...</div>
+                <div class="content-block">Элемент должен "прилипнуть" вверху</div>
+                <div class="content-block">И оставаться там при прокрутке</div>
+                <div class="content-block">Пока не выйдете из контейнера</div>
+            </div>
+        </div>
+        
+        <!-- Дополнительный контент для демонстрации прокрутки -->
+        <div class="section">
+            <h2>Дополнительный контент для демонстрации прокрутки</h2>
+            <p class="scroll-indicator">Прокрутите вниз, чтобы увидеть разницу в поведении fixed и sticky элементов</p>
+            
+            <div class="content-block">Блок контента 1</div>
+            <div class="content-block">Блок контента 2</div>
+            <div class="content-block">Блок контента 3</div>
+            <div class="content-block">Блок контента 4</div>
+            <div class="content-block">Блок контента 5</div>
+            <div class="content-block">Блок контента 6</div>
+            <div class="content-block">Блок контента 7</div>
+            <div class="content-block">Блок контента 8</div>
+            <div class="content-block">Блок контента 9</div>
+            <div class="content-block">Блок контента 10</div>
+        </div>
+        
+        <div class="section">
+            <h2>Практическое применение</h2>
+            <h3>Когда использовать каждый тип позиционирования:</h3>
+            
+            <div class="note">
+                <p><strong>Static:</strong> По умолчанию для большинства элементов. Используется, когда не нужно специальное позиционирование.</p>
+            </div>
+            
+            <div class="note">
+                <p><strong>Relative:</strong> Для небольших корректировок положения элемента без нарушения общего потока документа. Также создает контекст позиционирования для абсолютно позиционированных потомков.</p>
+            </div>
+            
+            <div class="note">
+                <p><strong>Absolute:</strong> Для элементов, которые должны быть точно размещены относительно другого элемента (например, выпадающие меню, всплывающие подсказки).</p>
+            </div>
+            
+            <div class="note">
+                <p><strong>Fixed:</strong> Для элементов, которые должны оставаться видимыми при прокрутке (навигационные панели, кнопки "наверх", чаты).</p>
+            </div>
+            
+            <div class="note">
+                <p><strong>Sticky:</strong> Для заголовков таблиц, навигации, которые должны "прилипать" при прокрутке определенной области.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Демонстрация CSS позиционирования &copy; 2023</p>
+    </footer>
+</body>
+</html>

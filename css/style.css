@@ -1,0 +1,378 @@
+/* Base styles - Mobile First */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.magic-form {
+    background: rgba(255, 240, 255, 0.95);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 
+        0 0 30px rgba(255, 105, 180, 0.3),
+        0 0 60px rgba(100, 200, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.magic-form::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff69b4, 
+        #ff1493, 
+        #00bfff, 
+        #1e90ff);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.form-title {
+    text-align: center;
+    color: #8a2be2;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Чиби-котик создан чисто на CSS */
+.chibi-cat {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+}
+
+.chibi-cat::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: #ff69b4;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 5px;
+    left: 5px;
+}
+
+.chibi-cat::after {
+    content: '^^';
+    position: absolute;
+    color: white;
+    font-size: 8px;
+    top: 15px;
+    left: 13px;
+    transform: rotate(90deg);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #9370db;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Градиентный бордер для инпутов */
+.input-group input {
+    background: 
+        linear-gradient(45deg, #ff69b4, #00bfff) border-box,
+        linear-gradient(45deg, #ff69b4, #00bfff) border-box;
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(0, 191, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.input-group input::placeholder {
+    color: #c0c0c0;
+}
+
+/* Стили для магического кристалла-кнопки */
+.crystal-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff69b4, #00bfff);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(45deg);
+    width: 150px;
+    height: 150px;
+    margin: 30px auto 10px;
+    display: block;
+    animation: pulse 2s infinite;
+}
+
+.crystal-btn::before {
+    content: 'Войти в портал';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 200%;
+    text-align: center;
+}
+
+.crystal-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.crystal-btn:hover::after {
+    left: 50%;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.9;
+        box-shadow: 
+            0 0 20px rgba(255, 105, 180, 0.6),
+            0 0 40px rgba(0, 191, 255, 0.4);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 
+            0 0 30px rgba(255, 105, 180, 0.8),
+            0 0 60px rgba(0, 191, 255, 0.6);
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .magic-form {
+        padding: 40px 35px;
+    }
+    
+    .form-title {
+        font-size: 2.2rem;
+    }
+    
+    .chibi-cat {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .input-group input {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .crystal-btn {
+        width: 180px;
+        height: 180px;
+        margin: 40px auto 15px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .login-container {
+        max-width: 450px;
+    }
+    
+    .magic-form {
+        padding: 50px 45px;
+    }
+    
+    .form-title {
+        font-size: 2.5rem;
+    }
+    
+    .crystal-btn {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto 20px;
+    }
+    
+    .crystal-btn:hover {
+        animation: pulse 1s infinite;
+        transform: rotate(45deg) scale(1.05);
+    }
+}
+
+/* Добавьте эти стили в конец файла style.css */
+
+/* Стили для radio и checkbox групп */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Стили для range input */
+.input-group input[type="range"] {
+    background: none;
+    border: none;
+    height: 6px;
+    padding: 0;
+}
+
+.input-group input[type="range"]:focus {
+    box-shadow: none;
+    transform: none;
+}
+
+/* Стили для color input */
+.input-group input[type="color"] {
+    height: 50px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Стили для file input */
+.input-group input[type="file"] {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+/* Стили для кнопок reset и button */
+.crystal-btn.secondary {
+    background: linear-gradient(135deg, #9370db, #6495ed);
+    transform: rotate(0deg);
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    padding: 12px 20px;
+}
+
+.crystal-btn.secondary::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.crystal-btn.tertiary {
+    background: linear-gradient(135deg, #20b2aa, #00ced1);
+    transform: rotate(0deg);
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    padding: 12px 20px;
+}
+
+.crystal-btn.tertiary::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Стили для image input */
+.input-group input[type="image"] {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-group input[type="image"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+/* Адаптивность для новых элементов */
+@media (min-width: 768px) {
+    .radio-group, .checkbox-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Убедитесь, что все input имеют одинаковые базовые стили */
+.input-group input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="reset"]):not([type="button"]):not([type="submit"]) {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Градиентный бордер для всех input кроме специальных типов */
+.input-group input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="reset"]):not([type="button"]):not([type="submit"]):not([type="range"]):not([type="color"]):not([type="file"]) {
+    background: 
+        linear-gradient(45deg, #ff69b4, #00bfff) border-box,
+        linear-gradient(45deg, #ff69b4, #00bfff) border-box;
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}

@@ -3,52 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сайт-визитка преподавателя веб-дизайна Кокорина Евгения">
-    <title>Кокорин Евгений - Преподаватель веб-дизайна</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Портал Магической Академии</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">Кокорин Евгений</h1>
-            <p class="header__subtitle">Преподаватель курса по веб-дизайну</p>
-            <img class="header__avatar" src="images/avatar.jpg" alt="Портрет преподавателя Кокорина Евгения Сергеевича в деловом костюме" width="200" title="Это я!">
-        </div>
-    </header>
-
-    <main class="main">
-        <section class="section about-section" id="about">
-            <h2 class="section__title">Обо мне</h2>
-            <p class="about__text">Преподаю верстку сайтов, а также разработку телеграм ботов.</p>
-            <a class="button button--primary" href="pages/about.html" target="_blank" title="ссылка на страницу обо мне">Подробнее</a>
-        </section>
-
-        <section class="section skills-section" id="skills">
-            <h2 class="section__title">Мои навыки</h2>
-            <ul class="skills-list">
-                <li class="skills-list__item">HTML</li>
-                <li class="skills-list__item">CSS</li>
-                <li class="skills-list__item">Работа с графикой</li>
-            </ul>
-        </section>
-
-        <section class="section portfolio-section" id="portfolio">
-            <h2 class="section__title">Портфолио:</h2>
-            <a class="button button--secondary" href="pages/portfolio.html">Ссылка на портфолио</a>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer__content">
-            <h2 class="footer__title">Контакты:</h2>
-            <div class="footer__contacts">
-                <a class="footer__link" href="mailto:zh.kokorin@mail.ru">Написать мне</a>
-                <a class="footer__link" href="tel:+79991234567">Позвонить мне</a>
+    <div class="login-container">
+        <form class="magic-form">
+            <h1 class="form-title">
+                <span class="chibi-cat"></span>
+                Портал Академии
+            </h1>
+            
+            <!-- Базовые типы input -->
+            <div class="input-group">
+                <label for="spellcaster-name">Имя заклинателя (text)</label>
+                <input type="text" id="spellcaster-name" placeholder="Введите ваше магическое имя">
             </div>
-        </div>
-    </footer>
+            
+            <div class="input-group">
+                <label for="mana-level">Уровень маны (password)</label>
+                <input type="password" id="mana-level" placeholder="●●●●●●●●">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-email">Электронная сова (email)</label>
+                <input type="email" id="magic-email" placeholder="wizard@academy.magic">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-tel">Магический коммуникатор (tel)</label>
+                <input type="tel" id="magic-tel" placeholder="+7 (900) 123-45-67">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-url">Ссылка на заклинание (url)</label>
+                <input type="url" id="spell-url" placeholder="https://magic-spell.com">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-number">Сила магии (number)</label>
+                <input type="number" id="magic-number" min="1" max="100" placeholder="От 1 до 100">
+            </div>
+            
+            <div class="input-group">
+                <label for="mana-range">Уровень маны (range)</label>
+                <input type="range" id="mana-range" min="0" max="100" value="50">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-date">Дата заклинания (date)</label>
+                <input type="date" id="spell-date">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-time">Время ритуала (time)</label>
+                <input type="time" id="spell-time">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-datetime">Дата и время (datetime-local)</label>
+                <input type="datetime-local" id="spell-datetime">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-month">Месяц обучения (month)</label>
+                <input type="month" id="magic-month">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-week">Неделя семестра (week)</label>
+                <input type="week" id="magic-week">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-search">Поиск заклинаний (search)</label>
+                <input type="search" id="spell-search" placeholder="Искать заклинания...">
+            </div>
+            
+            <div class="input-group">
+                <label for="magic-color">Цвет магии (color)</label>
+                <input type="color" id="magic-color" value="#8a2be2">
+            </div>
+            
+            <div class="input-group">
+                <label for="spell-file">Свиток заклинания (file)</label>
+                <input type="file" id="spell-file">
+            </div>
+            
+            <!-- Checkbox и Radio -->
+            <div class="input-group">
+                <label>Специализация (radio):</label>
+                <div class="radio-group">
+                    <input type="radio" id="fire-magic" name="specialization" value="fire">
+                    <label for="fire-magic">Огненная магия</label>
+                    
+                    <input type="radio" id="water-magic" name="specialization" value="water">
+                    <label for="water-magic">Водная магия</label>
+                    
+                    <input type="radio" id="air-magic" name="specialization" value="air">
+                    <label for="air-magic">Воздушная магия</label>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label>Магические навыки (checkbox):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="telekinesis" name="skills" value="telekinesis">
+                    <label for="telekinesis">Телекинез</label>
+                    
+                    <input type="checkbox" id="healing" name="skills" value="healing">
+                    <label for="healing">Исцеление</label>
+                    
+                    <input type="checkbox" id="divination" name="skills" value="divination">
+                    <label for="divination">Прорицание</label>
+                </div>
+            </div>
+            
+            <!-- Скрытое поле -->
+            <input type="hidden" id="magic-token" value="secret-magic-token">
+            
+            <!-- Кнопки -->
+            <div class="input-group">
+                <label for="magic-reset">Сброс заклинания (reset)</label>
+                <input type="reset" id="magic-reset" value="Очистить форму" class="crystal-btn secondary">
+            </div>
+            
+            <button type="submit" class="crystal-btn">
+                Войти в портал
+            </button>
+            
+            <button type="button" class="crystal-btn tertiary">
+                Просто кнопка
+            </button>
+            
+            <!-- Image input -->
+            <div class="input-group">
+                <label for="magic-image">Магическая печать (image)</label>
+                <input type="image" id="magic-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI5NiIgaGVpZ2h0PSI0NiIgcng9IjEwIiBmaWxsPSIjOGEyYmUyIiBzdHJva2U9IiNmZjY5YjQiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjUwIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+OiDwvdGV4dD48L3N2Zz4=" alt="Магическая печать" width="100" height="50">
+            </div>
+        </form>
+    </div>
+
+    
 </body>
 </html>

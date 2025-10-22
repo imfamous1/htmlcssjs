@@ -3,147 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портал Магической Академии</title>
+    <title>Сетка товаров</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="login-container">
-        <form class="magic-form">
-            <h1 class="form-title">
-                <span class="chibi-cat"></span>
-                Портал Академии
-            </h1>
-            
-            <!-- Базовые типы input -->
-            <div class="input-group">
-                <label for="spellcaster-name">Имя заклинателя (text)</label>
-                <input type="text" id="spellcaster-name" placeholder="Введите ваше магическое имя">
-            </div>
-            
-            <div class="input-group">
-                <label for="mana-level">Уровень маны (password)</label>
-                <input type="password" id="mana-level" placeholder="●●●●●●●●">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-email">Электронная сова (email)</label>
-                <input type="email" id="magic-email" placeholder="wizard@academy.magic">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-tel">Магический коммуникатор (tel)</label>
-                <input type="tel" id="magic-tel" placeholder="+7 (900) 123-45-67">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-url">Ссылка на заклинание (url)</label>
-                <input type="url" id="spell-url" placeholder="https://magic-spell.com">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-number">Сила магии (number)</label>
-                <input type="number" id="magic-number" min="1" max="100" placeholder="От 1 до 100">
-            </div>
-            
-            <div class="input-group">
-                <label for="mana-range">Уровень маны (range)</label>
-                <input type="range" id="mana-range" min="0" max="100" value="50">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-date">Дата заклинания (date)</label>
-                <input type="date" id="spell-date">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-time">Время ритуала (time)</label>
-                <input type="time" id="spell-time">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-datetime">Дата и время (datetime-local)</label>
-                <input type="datetime-local" id="spell-datetime">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-month">Месяц обучения (month)</label>
-                <input type="month" id="magic-month">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-week">Неделя семестра (week)</label>
-                <input type="week" id="magic-week">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-search">Поиск заклинаний (search)</label>
-                <input type="search" id="spell-search" placeholder="Искать заклинания...">
-            </div>
-            
-            <div class="input-group">
-                <label for="magic-color">Цвет магии (color)</label>
-                <input type="color" id="magic-color" value="#8a2be2">
-            </div>
-            
-            <div class="input-group">
-                <label for="spell-file">Свиток заклинания (file)</label>
-                <input type="file" id="spell-file">
-            </div>
-            
-            <!-- Checkbox и Radio -->
-            <div class="input-group">
-                <label>Специализация (radio):</label>
-                <div class="radio-group">
-                    <input type="radio" id="fire-magic" name="specialization" value="fire">
-                    <label for="fire-magic">Огненная магия</label>
-                    
-                    <input type="radio" id="water-magic" name="specialization" value="water">
-                    <label for="water-magic">Водная магия</label>
-                    
-                    <input type="radio" id="air-magic" name="specialization" value="air">
-                    <label for="air-magic">Воздушная магия</label>
-                </div>
-            </div>
-            
-            <div class="input-group">
-                <label>Магические навыки (checkbox):</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="telekinesis" name="skills" value="telekinesis">
-                    <label for="telekinesis">Телекинез</label>
-                    
-                    <input type="checkbox" id="healing" name="skills" value="healing">
-                    <label for="healing">Исцеление</label>
-                    
-                    <input type="checkbox" id="divination" name="skills" value="divination">
-                    <label for="divination">Прорицание</label>
-                </div>
-            </div>
-            
-            <!-- Скрытое поле -->
-            <input type="hidden" id="magic-token" value="secret-magic-token">
-            
-            <!-- Кнопки -->
-            <div class="input-group">
-                <label for="magic-reset">Сброс заклинания (reset)</label>
-                <input type="reset" id="magic-reset" value="Очистить форму" class="crystal-btn secondary">
-            </div>
-            
-            <button type="submit" class="crystal-btn">
-                Войти в портал
-            </button>
-            
-            <button type="button" class="crystal-btn tertiary">
-                Просто кнопка
-            </button>
-            
-            <!-- Image input -->
-            <div class="input-group">
-                <label for="magic-image">Магическая печать (image)</label>
-                <input type="image" id="magic-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMTAwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI5NiIgaGVpZ2h0PSI0NiIgcng9IjEwIiBmaWxsPSIjOGEyYmUyIiBzdHJva2U9IiNmZjY5YjQiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjUwIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+OiDwvdGV4dD48L3N2Zz4=" alt="Магическая печать" width="100" height="50">
-            </div>
-        </form>
-    </div>
+    <div class="products-grid">
+        <!-- Карточка товара 1 -->
+        <div class="product-card">
+            <img src="https://png.pngtree.com/png-vector/20241123/ourmid/pngtree-adorable-golden-cat-clipart-standing-illustration-png-image_14489824.png" alt="Товар 1" class="product-image">
+            <h3 class="product-title">Название товара 1</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">1 499 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
 
-    
+        <!-- Карточка товара 2 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200" alt="Товар 2" class="product-image">
+            <h3 class="product-title">Название товара 2</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">2 299 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+
+        <!-- Карточка товара 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200" alt="Товар 3" class="product-image">
+            <h3 class="product-title">Название товара 3</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">3 999 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+
+        <!-- Карточка товара 4 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200" alt="Товар 4" class="product-image">
+            <h3 class="product-title">Название товара 4</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">899 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+
+        <!-- Карточка товара 5 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200" alt="Товар 5" class="product-image">
+            <h3 class="product-title">Название товара 5</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">5 499 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+
+        <!-- Карточка товара 6 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200" alt="Товар 6" class="product-image">
+            <h3 class="product-title">Название товара 6</h3>
+            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
+            <div class="product-price">1 799 ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+    </div>
+    <script>
+        console.error("Привет ребята!")
+    </script>
 </body>
 </html>
